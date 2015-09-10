@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8399c3ca05847a1be6fcda0626224bc" Name="关系图1">
+        <EntityTypeShape EntityType="TaskDbModel.tbBug" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbButton" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbDepartment" Width="1.5" PointX="3.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbGoods" Width="1.5" PointX="9" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbGrades" Width="1.5" PointX="6.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbLoginLog" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbMenu" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbRole" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbRoleMenuButton" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbSales" Width="1.5" PointX="11.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbTask" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbTaskAssign" Width="1.5" PointX="10.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbTaskProcess" Width="1.5" PointX="13.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbUser" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskDbModel.tbUserOperateLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TaskDbModel.FK_tbBug_tbUser" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbRoleMenuButton_tbButton" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbGoods_tbGrades_GradeId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbSales_tbGoods_GoodId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbLoginLog_tbUser" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbRoleMenuButton_tbMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbRoleMenuButton_tbRole" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbSales_tbUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbTask_tbUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbTaskAssign_tbTaskAssign_TaskId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbTaskProcess_tbTask_TaskId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbTaskAssign_tbUser" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.FK_tbTaskProcess_tbUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.tbMenuButton" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.tbUserDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskDbModel.tbUserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

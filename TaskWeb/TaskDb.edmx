@@ -1,0 +1,1243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TaskDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TaskDbModelStoreContainer">
+          <EntitySet Name="tbBug" EntityType="TaskDbModel.Store.tbBug" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbButton" EntityType="TaskDbModel.Store.tbButton" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbDepartment" EntityType="TaskDbModel.Store.tbDepartment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbGoods" EntityType="TaskDbModel.Store.tbGoods" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbGrades" EntityType="TaskDbModel.Store.tbGrades" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbLoginLog" EntityType="TaskDbModel.Store.tbLoginLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMenu" EntityType="TaskDbModel.Store.tbMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMenuButton" EntityType="TaskDbModel.Store.tbMenuButton" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbRole" EntityType="TaskDbModel.Store.tbRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbRoleMenuButton" EntityType="TaskDbModel.Store.tbRoleMenuButton" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbSales" EntityType="TaskDbModel.Store.tbSales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTask" EntityType="TaskDbModel.Store.tbTask" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTaskAssign" EntityType="TaskDbModel.Store.tbTaskAssign" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTaskProcess" EntityType="TaskDbModel.Store.tbTaskProcess" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUser" EntityType="TaskDbModel.Store.tbUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUserDepartment" EntityType="TaskDbModel.Store.tbUserDepartment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUserOperateLog" EntityType="TaskDbModel.Store.tbUserOperateLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUserRole" EntityType="TaskDbModel.Store.tbUserRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tbBug_tbUser" Association="TaskDbModel.Store.FK_tbBug_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbBug" EntitySet="tbBug" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbGoods_tbGrades_GradeId" Association="TaskDbModel.Store.FK_tbGoods_tbGrades_GradeId">
+            <End Role="tbGrades" EntitySet="tbGrades" />
+            <End Role="tbGoods" EntitySet="tbGoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbLoginLog_tbUser" Association="TaskDbModel.Store.FK_tbLoginLog_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbLoginLog" EntitySet="tbLoginLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMenuButton_tbButton" Association="TaskDbModel.Store.FK_tbMenuButton_tbButton">
+            <End Role="tbButton" EntitySet="tbButton" />
+            <End Role="tbMenuButton" EntitySet="tbMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMenuButton_tbMenu" Association="TaskDbModel.Store.FK_tbMenuButton_tbMenu">
+            <End Role="tbMenu" EntitySet="tbMenu" />
+            <End Role="tbMenuButton" EntitySet="tbMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenuButton_tbButton" Association="TaskDbModel.Store.FK_tbRoleMenuButton_tbButton">
+            <End Role="tbButton" EntitySet="tbButton" />
+            <End Role="tbRoleMenuButton" EntitySet="tbRoleMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenuButton_tbMenu" Association="TaskDbModel.Store.FK_tbRoleMenuButton_tbMenu">
+            <End Role="tbMenu" EntitySet="tbMenu" />
+            <End Role="tbRoleMenuButton" EntitySet="tbRoleMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenuButton_tbRole" Association="TaskDbModel.Store.FK_tbRoleMenuButton_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbRoleMenuButton" EntitySet="tbRoleMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSales_tbGoods_GoodId" Association="TaskDbModel.Store.FK_tbSales_tbGoods_GoodId">
+            <End Role="tbGoods" EntitySet="tbGoods" />
+            <End Role="tbSales" EntitySet="tbSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSales_tbUser_UserId" Association="TaskDbModel.Store.FK_tbSales_tbUser_UserId">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbSales" EntitySet="tbSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTask_tbUser_UserId" Association="TaskDbModel.Store.FK_tbTask_tbUser_UserId">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbTask" EntitySet="tbTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskAssign_tbTaskAssign_TaskId" Association="TaskDbModel.Store.FK_tbTaskAssign_tbTaskAssign_TaskId">
+            <End Role="tbTask" EntitySet="tbTask" />
+            <End Role="tbTaskAssign" EntitySet="tbTaskAssign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskAssign_tbUser" Association="TaskDbModel.Store.FK_tbTaskAssign_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbTaskAssign" EntitySet="tbTaskAssign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskProcess_tbTask_TaskId" Association="TaskDbModel.Store.FK_tbTaskProcess_tbTask_TaskId">
+            <End Role="tbTask" EntitySet="tbTask" />
+            <End Role="tbTaskProcess" EntitySet="tbTaskProcess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskProcess_tbUser_UserId" Association="TaskDbModel.Store.FK_tbTaskProcess_tbUser_UserId">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbTaskProcess" EntitySet="tbTaskProcess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUserDepartment_tbDepartment" Association="TaskDbModel.Store.FK_tbUserDepartment_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbUserDepartment" EntitySet="tbUserDepartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUserDepartment_tbUser" Association="TaskDbModel.Store.FK_tbUserDepartment_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbUserDepartment" EntitySet="tbUserDepartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUserRole_tbRole" Association="TaskDbModel.Store.FK_tbUserRole_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbUserRole" EntitySet="tbUserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUserRole_tbUser" Association="TaskDbModel.Store.FK_tbUserRole_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbUserRole" EntitySet="tbUserRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbBug">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="userIp" Type="varchar" MaxLength="50" />
+          <Property Name="bugInfo" Type="varchar(max)" Nullable="false" />
+          <Property Name="bugReply" Type="varchar(max)" />
+          <Property Name="bugDate" Type="datetime" Nullable="false" />
+          <Property Name="ifShow" Type="bit" />
+          <Property Name="ifSolve" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbButton">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="icon" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="sort" Type="int" />
+          <Property Name="addDate" Type="datetime" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbDepartment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="parentId" Type="int" />
+          <Property Name="sort" Type="int" />
+          <Property Name="addDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbGoods">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="points" Type="int" Nullable="false" />
+          <Property Name="gradeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbGrades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="points" Type="int" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbLoginLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="userIp" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="success" Type="bit" />
+          <Property Name="loginDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="parentId" Type="int" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="linkAddress" Type="varchar" MaxLength="100" />
+          <Property Name="icon" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="sort" Type="int" />
+          <Property Name="addDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMenuButton">
+          <Key>
+            <PropertyRef Name="menuId" />
+            <PropertyRef Name="buttonId" />
+          </Key>
+          <Property Name="menuId" Type="int" Nullable="false" />
+          <Property Name="buttonId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="roleName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+          <Property Name="addDate" Type="datetime" Nullable="false" />
+          <Property Name="modifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbRoleMenuButton">
+          <Key>
+            <PropertyRef Name="roleId" />
+            <PropertyRef Name="menuId" />
+            <PropertyRef Name="buttonId" />
+          </Key>
+          <Property Name="roleId" Type="int" Nullable="false" />
+          <Property Name="menuId" Type="int" Nullable="false" />
+          <Property Name="buttonId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbSales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="goodId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbTask">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="content" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="startTime" Type="datetime" Nullable="false" />
+          <Property Name="endTime" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="kind" Type="int" Nullable="false" />
+          <Property Name="rating" Type="int" Nullable="false" />
+          <Property Name="condition" Type="varchar" MaxLength="500" />
+          <Property Name="points" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" Nullable="false" />
+          <Property Name="creatorId" Type="int" Nullable="false" />
+          <Property Name="result" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbTaskAssign">
+          <Key>
+            <PropertyRef Name="taskId" />
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="taskId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="assignTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTaskProcess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="taskId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="content" Type="varchar" MaxLength="500" />
+          <Property Name="startTime" Type="datetime" />
+          <Property Name="endTime" Type="datetime" />
+          <Property Name="addTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="userPwd" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="realName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="points" Type="int" />
+          <Property Name="tel" Type="varchar" MaxLength="50" />
+          <Property Name="grade" Type="int" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+          <Property Name="addDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserDepartment">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="deptId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="deptId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserOperateLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="userIp" Type="varchar" MaxLength="50" />
+          <Property Name="operateInfo" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="ifSuccess" Type="bit" />
+          <Property Name="operateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserRole">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="roleId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbBug_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbBug" Type="TaskDbModel.Store.tbBug" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbBug">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbGoods_tbGrades_GradeId">
+          <End Role="tbGrades" Type="TaskDbModel.Store.tbGrades" Multiplicity="1" />
+          <End Role="tbGoods" Type="TaskDbModel.Store.tbGoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbGrades">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbGoods">
+              <PropertyRef Name="gradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbLoginLog_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbLoginLog" Type="TaskDbModel.Store.tbLoginLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbLoginLog">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMenuButton_tbButton">
+          <End Role="tbButton" Type="TaskDbModel.Store.tbButton" Multiplicity="1" />
+          <End Role="tbMenuButton" Type="TaskDbModel.Store.tbMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbButton">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbMenuButton">
+              <PropertyRef Name="buttonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMenuButton_tbMenu">
+          <End Role="tbMenu" Type="TaskDbModel.Store.tbMenu" Multiplicity="1" />
+          <End Role="tbMenuButton" Type="TaskDbModel.Store.tbMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMenu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbMenuButton">
+              <PropertyRef Name="menuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenuButton_tbButton">
+          <End Role="tbButton" Type="TaskDbModel.Store.tbButton" Multiplicity="1" />
+          <End Role="tbRoleMenuButton" Type="TaskDbModel.Store.tbRoleMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbButton">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbRoleMenuButton">
+              <PropertyRef Name="buttonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenuButton_tbMenu">
+          <End Role="tbMenu" Type="TaskDbModel.Store.tbMenu" Multiplicity="1" />
+          <End Role="tbRoleMenuButton" Type="TaskDbModel.Store.tbRoleMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMenu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbRoleMenuButton">
+              <PropertyRef Name="menuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenuButton_tbRole">
+          <End Role="tbRole" Type="TaskDbModel.Store.tbRole" Multiplicity="1" />
+          <End Role="tbRoleMenuButton" Type="TaskDbModel.Store.tbRoleMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbRoleMenuButton">
+              <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSales_tbGoods_GoodId">
+          <End Role="tbGoods" Type="TaskDbModel.Store.tbGoods" Multiplicity="1" />
+          <End Role="tbSales" Type="TaskDbModel.Store.tbSales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbGoods">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbSales">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSales_tbUser_UserId">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbSales" Type="TaskDbModel.Store.tbSales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbSales">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTask_tbUser_UserId">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbTask" Type="TaskDbModel.Store.tbTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTask">
+              <PropertyRef Name="creatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskAssign_tbTaskAssign_TaskId">
+          <End Role="tbTask" Type="TaskDbModel.Store.tbTask" Multiplicity="1" />
+          <End Role="tbTaskAssign" Type="TaskDbModel.Store.tbTaskAssign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbTask">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskAssign">
+              <PropertyRef Name="taskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskAssign_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbTaskAssign" Type="TaskDbModel.Store.tbTaskAssign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskAssign">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskProcess_tbTask_TaskId">
+          <End Role="tbTask" Type="TaskDbModel.Store.tbTask" Multiplicity="1" />
+          <End Role="tbTaskProcess" Type="TaskDbModel.Store.tbTaskProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbTask">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskProcess">
+              <PropertyRef Name="taskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskProcess_tbUser_UserId">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbTaskProcess" Type="TaskDbModel.Store.tbTaskProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskProcess">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUserDepartment_tbDepartment">
+          <End Role="tbDepartment" Type="TaskDbModel.Store.tbDepartment" Multiplicity="1" />
+          <End Role="tbUserDepartment" Type="TaskDbModel.Store.tbUserDepartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbUserDepartment">
+              <PropertyRef Name="deptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUserDepartment_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbUserDepartment" Type="TaskDbModel.Store.tbUserDepartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbUserDepartment">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUserRole_tbRole">
+          <End Role="tbRole" Type="TaskDbModel.Store.tbRole" Multiplicity="1" />
+          <End Role="tbUserRole" Type="TaskDbModel.Store.tbUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbUserRole">
+              <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUserRole_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.Store.tbUser" Multiplicity="1" />
+          <End Role="tbUserRole" Type="TaskDbModel.Store.tbUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbUserRole">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TaskDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TaskDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbBug" EntityType="TaskDbModel.tbBug" />
+          <EntitySet Name="tbButton" EntityType="TaskDbModel.tbButton" />
+          <EntitySet Name="tbDepartment" EntityType="TaskDbModel.tbDepartment" />
+          <EntitySet Name="tbGoods" EntityType="TaskDbModel.tbGoods" />
+          <EntitySet Name="tbGrades" EntityType="TaskDbModel.tbGrades" />
+          <EntitySet Name="tbLoginLog" EntityType="TaskDbModel.tbLoginLog" />
+          <EntitySet Name="tbMenu" EntityType="TaskDbModel.tbMenu" />
+          <EntitySet Name="tbRole" EntityType="TaskDbModel.tbRole" />
+          <EntitySet Name="tbRoleMenuButton" EntityType="TaskDbModel.tbRoleMenuButton" />
+          <EntitySet Name="tbSales" EntityType="TaskDbModel.tbSales" />
+          <EntitySet Name="tbTask" EntityType="TaskDbModel.tbTask" />
+          <EntitySet Name="tbTaskAssign" EntityType="TaskDbModel.tbTaskAssign" />
+          <EntitySet Name="tbTaskProcess" EntityType="TaskDbModel.tbTaskProcess" />
+          <EntitySet Name="tbUser" EntityType="TaskDbModel.tbUser" />
+          <EntitySet Name="tbUserOperateLog" EntityType="TaskDbModel.tbUserOperateLog" />
+          <AssociationSet Name="FK_tbBug_tbUser" Association="TaskDbModel.FK_tbBug_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbBug" EntitySet="tbBug" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenuButton_tbButton" Association="TaskDbModel.FK_tbRoleMenuButton_tbButton">
+            <End Role="tbButton" EntitySet="tbButton" />
+            <End Role="tbRoleMenuButton" EntitySet="tbRoleMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbGoods_tbGrades_GradeId" Association="TaskDbModel.FK_tbGoods_tbGrades_GradeId">
+            <End Role="tbGrades" EntitySet="tbGrades" />
+            <End Role="tbGoods" EntitySet="tbGoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSales_tbGoods_GoodId" Association="TaskDbModel.FK_tbSales_tbGoods_GoodId">
+            <End Role="tbGoods" EntitySet="tbGoods" />
+            <End Role="tbSales" EntitySet="tbSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbLoginLog_tbUser" Association="TaskDbModel.FK_tbLoginLog_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbLoginLog" EntitySet="tbLoginLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenuButton_tbMenu" Association="TaskDbModel.FK_tbRoleMenuButton_tbMenu">
+            <End Role="tbMenu" EntitySet="tbMenu" />
+            <End Role="tbRoleMenuButton" EntitySet="tbRoleMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenuButton_tbRole" Association="TaskDbModel.FK_tbRoleMenuButton_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbRoleMenuButton" EntitySet="tbRoleMenuButton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSales_tbUser_UserId" Association="TaskDbModel.FK_tbSales_tbUser_UserId">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbSales" EntitySet="tbSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTask_tbUser_UserId" Association="TaskDbModel.FK_tbTask_tbUser_UserId">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbTask" EntitySet="tbTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskAssign_tbTaskAssign_TaskId" Association="TaskDbModel.FK_tbTaskAssign_tbTaskAssign_TaskId">
+            <End Role="tbTask" EntitySet="tbTask" />
+            <End Role="tbTaskAssign" EntitySet="tbTaskAssign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskProcess_tbTask_TaskId" Association="TaskDbModel.FK_tbTaskProcess_tbTask_TaskId">
+            <End Role="tbTask" EntitySet="tbTask" />
+            <End Role="tbTaskProcess" EntitySet="tbTaskProcess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskAssign_tbUser" Association="TaskDbModel.FK_tbTaskAssign_tbUser">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbTaskAssign" EntitySet="tbTaskAssign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbTaskProcess_tbUser_UserId" Association="TaskDbModel.FK_tbTaskProcess_tbUser_UserId">
+            <End Role="tbUser" EntitySet="tbUser" />
+            <End Role="tbTaskProcess" EntitySet="tbTaskProcess" />
+          </AssociationSet>
+          <AssociationSet Name="tbMenuButton" Association="TaskDbModel.tbMenuButton">
+            <End Role="tbButton" EntitySet="tbButton" />
+            <End Role="tbMenu" EntitySet="tbMenu" />
+          </AssociationSet>
+          <AssociationSet Name="tbUserDepartment" Association="TaskDbModel.tbUserDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbUser" EntitySet="tbUser" />
+          </AssociationSet>
+          <AssociationSet Name="tbUserRole" Association="TaskDbModel.tbUserRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbUser" EntitySet="tbUser" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbBug">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="userIp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="bugInfo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="bugReply" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="bugDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ifShow" Type="Boolean" />
+          <Property Name="ifSolve" Type="Boolean" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.FK_tbBug_tbUser" FromRole="tbBug" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbButton">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="icon" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tbRoleMenuButton" Relationship="TaskDbModel.FK_tbRoleMenuButton_tbButton" FromRole="tbButton" ToRole="tbRoleMenuButton" />
+          <NavigationProperty Name="tbMenu" Relationship="TaskDbModel.tbMenuButton" FromRole="tbButton" ToRole="tbMenu" />
+        </EntityType>
+        <EntityType Name="tbDepartment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="parentId" Type="Int32" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.tbUserDepartment" FromRole="tbDepartment" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbGoods">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="points" Type="Int32" Nullable="false" />
+          <Property Name="gradeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbGrades" Relationship="TaskDbModel.FK_tbGoods_tbGrades_GradeId" FromRole="tbGoods" ToRole="tbGrades" />
+          <NavigationProperty Name="tbSales" Relationship="TaskDbModel.FK_tbSales_tbGoods_GoodId" FromRole="tbGoods" ToRole="tbSales" />
+        </EntityType>
+        <EntityType Name="tbGrades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="points" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tbGoods" Relationship="TaskDbModel.FK_tbGoods_tbGrades_GradeId" FromRole="tbGrades" ToRole="tbGoods" />
+        </EntityType>
+        <EntityType Name="tbLoginLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="userIp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="success" Type="Boolean" />
+          <Property Name="loginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.FK_tbLoginLog_tbUser" FromRole="tbLoginLog" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbMenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="parentId" Type="Int32" />
+          <Property Name="code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="linkAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="icon" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbRoleMenuButton" Relationship="TaskDbModel.FK_tbRoleMenuButton_tbMenu" FromRole="tbMenu" ToRole="tbRoleMenuButton" />
+          <NavigationProperty Name="tbButton" Relationship="TaskDbModel.tbMenuButton" FromRole="tbMenu" ToRole="tbButton" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbRoleMenuButton" Relationship="TaskDbModel.FK_tbRoleMenuButton_tbRole" FromRole="tbRole" ToRole="tbRoleMenuButton" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.tbUserRole" FromRole="tbRole" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbRoleMenuButton">
+          <Key>
+            <PropertyRef Name="roleId" />
+            <PropertyRef Name="menuId" />
+            <PropertyRef Name="buttonId" />
+          </Key>
+          <Property Name="roleId" Type="Int32" Nullable="false" />
+          <Property Name="menuId" Type="Int32" Nullable="false" />
+          <Property Name="buttonId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbButton" Relationship="TaskDbModel.FK_tbRoleMenuButton_tbButton" FromRole="tbRoleMenuButton" ToRole="tbButton" />
+          <NavigationProperty Name="tbMenu" Relationship="TaskDbModel.FK_tbRoleMenuButton_tbMenu" FromRole="tbRoleMenuButton" ToRole="tbMenu" />
+          <NavigationProperty Name="tbRole" Relationship="TaskDbModel.FK_tbRoleMenuButton_tbRole" FromRole="tbRoleMenuButton" ToRole="tbRole" />
+        </EntityType>
+        <EntityType Name="tbSales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="goodId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="addTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbGoods" Relationship="TaskDbModel.FK_tbSales_tbGoods_GoodId" FromRole="tbSales" ToRole="tbGoods" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.FK_tbSales_tbUser_UserId" FromRole="tbSales" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbTask">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="content" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="kind" Type="Int32" Nullable="false" />
+          <Property Name="rating" Type="Int32" Nullable="false" />
+          <Property Name="condition" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="points" Type="Int32" Nullable="false" />
+          <Property Name="addTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="creatorId" Type="Int32" Nullable="false" />
+          <Property Name="result" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.FK_tbTask_tbUser_UserId" FromRole="tbTask" ToRole="tbUser" />
+          <NavigationProperty Name="tbTaskAssign" Relationship="TaskDbModel.FK_tbTaskAssign_tbTaskAssign_TaskId" FromRole="tbTask" ToRole="tbTaskAssign" />
+          <NavigationProperty Name="tbTaskProcess" Relationship="TaskDbModel.FK_tbTaskProcess_tbTask_TaskId" FromRole="tbTask" ToRole="tbTaskProcess" />
+        </EntityType>
+        <EntityType Name="tbTaskAssign">
+          <Key>
+            <PropertyRef Name="taskId" />
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="taskId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="assignTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbTask" Relationship="TaskDbModel.FK_tbTaskAssign_tbTaskAssign_TaskId" FromRole="tbTaskAssign" ToRole="tbTask" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.FK_tbTaskAssign_tbUser" FromRole="tbTaskAssign" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbTaskProcess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="taskId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="content" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="startTime" Type="DateTime" Precision="3" />
+          <Property Name="endTime" Type="DateTime" Precision="3" />
+          <Property Name="addTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbTask" Relationship="TaskDbModel.FK_tbTaskProcess_tbTask_TaskId" FromRole="tbTaskProcess" ToRole="tbTask" />
+          <NavigationProperty Name="tbUser" Relationship="TaskDbModel.FK_tbTaskProcess_tbUser_UserId" FromRole="tbTaskProcess" ToRole="tbUser" />
+        </EntityType>
+        <EntityType Name="tbUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="userPwd" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="realName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="points" Type="Int32" />
+          <Property Name="tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="grade" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tbBug" Relationship="TaskDbModel.FK_tbBug_tbUser" FromRole="tbUser" ToRole="tbBug" />
+          <NavigationProperty Name="tbLoginLog" Relationship="TaskDbModel.FK_tbLoginLog_tbUser" FromRole="tbUser" ToRole="tbLoginLog" />
+          <NavigationProperty Name="tbSales" Relationship="TaskDbModel.FK_tbSales_tbUser_UserId" FromRole="tbUser" ToRole="tbSales" />
+          <NavigationProperty Name="tbTask" Relationship="TaskDbModel.FK_tbTask_tbUser_UserId" FromRole="tbUser" ToRole="tbTask" />
+          <NavigationProperty Name="tbTaskAssign" Relationship="TaskDbModel.FK_tbTaskAssign_tbUser" FromRole="tbUser" ToRole="tbTaskAssign" />
+          <NavigationProperty Name="tbTaskProcess" Relationship="TaskDbModel.FK_tbTaskProcess_tbUser_UserId" FromRole="tbUser" ToRole="tbTaskProcess" />
+          <NavigationProperty Name="tbDepartment" Relationship="TaskDbModel.tbUserDepartment" FromRole="tbUser" ToRole="tbDepartment" />
+          <NavigationProperty Name="tbRole" Relationship="TaskDbModel.tbUserRole" FromRole="tbUser" ToRole="tbRole" />
+        </EntityType>
+        <EntityType Name="tbUserOperateLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="userIp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="operateInfo" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ifSuccess" Type="Boolean" />
+          <Property Name="operateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_tbBug_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="1" />
+          <End Role="tbBug" Type="TaskDbModel.tbBug" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbBug">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenuButton_tbButton">
+          <End Role="tbButton" Type="TaskDbModel.tbButton" Multiplicity="1" />
+          <End Role="tbRoleMenuButton" Type="TaskDbModel.tbRoleMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbButton">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbRoleMenuButton">
+              <PropertyRef Name="buttonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbGoods_tbGrades_GradeId">
+          <End Role="tbGrades" Type="TaskDbModel.tbGrades" Multiplicity="1" />
+          <End Role="tbGoods" Type="TaskDbModel.tbGoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbGrades">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbGoods">
+              <PropertyRef Name="gradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSales_tbGoods_GoodId">
+          <End Role="tbGoods" Type="TaskDbModel.tbGoods" Multiplicity="1" />
+          <End Role="tbSales" Type="TaskDbModel.tbSales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbGoods">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbSales">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbLoginLog_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="1" />
+          <End Role="tbLoginLog" Type="TaskDbModel.tbLoginLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbLoginLog">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenuButton_tbMenu">
+          <End Role="tbMenu" Type="TaskDbModel.tbMenu" Multiplicity="1" />
+          <End Role="tbRoleMenuButton" Type="TaskDbModel.tbRoleMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMenu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbRoleMenuButton">
+              <PropertyRef Name="menuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenuButton_tbRole">
+          <End Role="tbRole" Type="TaskDbModel.tbRole" Multiplicity="1" />
+          <End Role="tbRoleMenuButton" Type="TaskDbModel.tbRoleMenuButton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbRoleMenuButton">
+              <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSales_tbUser_UserId">
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="1" />
+          <End Role="tbSales" Type="TaskDbModel.tbSales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbSales">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTask_tbUser_UserId">
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="1" />
+          <End Role="tbTask" Type="TaskDbModel.tbTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTask">
+              <PropertyRef Name="creatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskAssign_tbTaskAssign_TaskId">
+          <End Role="tbTask" Type="TaskDbModel.tbTask" Multiplicity="1" />
+          <End Role="tbTaskAssign" Type="TaskDbModel.tbTaskAssign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbTask">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskAssign">
+              <PropertyRef Name="taskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskProcess_tbTask_TaskId">
+          <End Role="tbTask" Type="TaskDbModel.tbTask" Multiplicity="1" />
+          <End Role="tbTaskProcess" Type="TaskDbModel.tbTaskProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbTask">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskProcess">
+              <PropertyRef Name="taskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskAssign_tbUser">
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="1" />
+          <End Role="tbTaskAssign" Type="TaskDbModel.tbTaskAssign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskAssign">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbTaskProcess_tbUser_UserId">
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="1" />
+          <End Role="tbTaskProcess" Type="TaskDbModel.tbTaskProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUser">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbTaskProcess">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tbMenuButton">
+          <End Role="tbButton" Type="TaskDbModel.tbButton" Multiplicity="*" />
+          <End Role="tbMenu" Type="TaskDbModel.tbMenu" Multiplicity="*" />
+        </Association>
+        <Association Name="tbUserDepartment">
+          <End Role="tbDepartment" Type="TaskDbModel.tbDepartment" Multiplicity="*" />
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="*" />
+        </Association>
+        <Association Name="tbUserRole">
+          <End Role="tbRole" Type="TaskDbModel.tbRole" Multiplicity="*" />
+          <End Role="tbUser" Type="TaskDbModel.tbUser" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TaskDbModelStoreContainer" CdmEntityContainer="TaskDbEntities">
+          <EntitySetMapping Name="tbBug">
+            <EntityTypeMapping TypeName="TaskDbModel.tbBug">
+              <MappingFragment StoreEntitySet="tbBug">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userIp" ColumnName="userIp" />
+                <ScalarProperty Name="bugInfo" ColumnName="bugInfo" />
+                <ScalarProperty Name="bugReply" ColumnName="bugReply" />
+                <ScalarProperty Name="bugDate" ColumnName="bugDate" />
+                <ScalarProperty Name="ifShow" ColumnName="ifShow" />
+                <ScalarProperty Name="ifSolve" ColumnName="ifSolve" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbButton">
+            <EntityTypeMapping TypeName="TaskDbModel.tbButton">
+              <MappingFragment StoreEntitySet="tbButton">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDepartment">
+            <EntityTypeMapping TypeName="TaskDbModel.tbDepartment">
+              <MappingFragment StoreEntitySet="tbDepartment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbGoods">
+            <EntityTypeMapping TypeName="TaskDbModel.tbGoods">
+              <MappingFragment StoreEntitySet="tbGoods">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="gradeId" ColumnName="gradeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbGrades">
+            <EntityTypeMapping TypeName="TaskDbModel.tbGrades">
+              <MappingFragment StoreEntitySet="tbGrades">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbLoginLog">
+            <EntityTypeMapping TypeName="TaskDbModel.tbLoginLog">
+              <MappingFragment StoreEntitySet="tbLoginLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userIp" ColumnName="userIp" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="success" ColumnName="success" />
+                <ScalarProperty Name="loginDate" ColumnName="loginDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMenu">
+            <EntityTypeMapping TypeName="TaskDbModel.tbMenu">
+              <MappingFragment StoreEntitySet="tbMenu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="linkAddress" ColumnName="linkAddress" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRole">
+            <EntityTypeMapping TypeName="TaskDbModel.tbRole">
+              <MappingFragment StoreEntitySet="tbRole">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="modifyDate" ColumnName="modifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRoleMenuButton">
+            <EntityTypeMapping TypeName="TaskDbModel.tbRoleMenuButton">
+              <MappingFragment StoreEntitySet="tbRoleMenuButton">
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="menuId" ColumnName="menuId" />
+                <ScalarProperty Name="buttonId" ColumnName="buttonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSales">
+            <EntityTypeMapping TypeName="TaskDbModel.tbSales">
+              <MappingFragment StoreEntitySet="tbSales">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="goodId" ColumnName="goodId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTask">
+            <EntityTypeMapping TypeName="TaskDbModel.tbTask">
+              <MappingFragment StoreEntitySet="tbTask">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="creatorId" ColumnName="creatorId" />
+                <ScalarProperty Name="result" ColumnName="result" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTaskAssign">
+            <EntityTypeMapping TypeName="TaskDbModel.tbTaskAssign">
+              <MappingFragment StoreEntitySet="tbTaskAssign">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="taskId" ColumnName="taskId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="assignTime" ColumnName="assignTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTaskProcess">
+            <EntityTypeMapping TypeName="TaskDbModel.tbTaskProcess">
+              <MappingFragment StoreEntitySet="tbTaskProcess">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="taskId" ColumnName="taskId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUser">
+            <EntityTypeMapping TypeName="TaskDbModel.tbUser">
+              <MappingFragment StoreEntitySet="tbUser">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+                <ScalarProperty Name="realName" ColumnName="realName" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUserOperateLog">
+            <EntityTypeMapping TypeName="TaskDbModel.tbUserOperateLog">
+              <MappingFragment StoreEntitySet="tbUserOperateLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userIp" ColumnName="userIp" />
+                <ScalarProperty Name="operateInfo" ColumnName="operateInfo" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="ifSuccess" ColumnName="ifSuccess" />
+                <ScalarProperty Name="operateDate" ColumnName="operateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tbMenuButton" TypeName="TaskDbModel.tbMenuButton" StoreEntitySet="tbMenuButton">
+            <EndProperty Name="tbButton">
+              <ScalarProperty Name="id" ColumnName="buttonId" />
+            </EndProperty>
+            <EndProperty Name="tbMenu">
+              <ScalarProperty Name="id" ColumnName="menuId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="tbUserDepartment" TypeName="TaskDbModel.tbUserDepartment" StoreEntitySet="tbUserDepartment">
+            <EndProperty Name="tbDepartment">
+              <ScalarProperty Name="id" ColumnName="deptId" />
+            </EndProperty>
+            <EndProperty Name="tbUser">
+              <ScalarProperty Name="id" ColumnName="userId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="tbUserRole" TypeName="TaskDbModel.tbUserRole" StoreEntitySet="tbUserRole">
+            <EndProperty Name="tbRole">
+              <ScalarProperty Name="id" ColumnName="roleId" />
+            </EndProperty>
+            <EndProperty Name="tbUser">
+              <ScalarProperty Name="id" ColumnName="userId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

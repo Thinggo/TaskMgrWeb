@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C88A9BFD-8FAC-4CE9-97E4-69FD164B514C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TaskWeb</RootNamespace>
+    <AssemblyName>TaskWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aa.aspx" />
+    <Content Include="bb.aspx" />
+    <Content Include="download\a.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aa.aspx.cs">
+      <DependentUpon>aa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aa.aspx.designer.cs">
+      <DependentUpon>aa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\Version.ashx.cs">
+      <DependentUpon>Version.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\Task.ashx.cs">
+      <DependentUpon>Task.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="bb.aspx.cs">
+      <DependentUpon>bb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bb.aspx.designer.cs">
+      <DependentUpon>bb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bll\BaseBLL.cs" />
+    <Compile Include="bll\JsonUtil.cs" />
+    <Compile Include="bll\Md5.cs" />
+    <Compile Include="bll\TaskBLL.cs" />
+    <Compile Include="bll\UserBLL.cs" />
+    <Compile Include="model\Message.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaskDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaskDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="tbBug.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbButton.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbDepartment.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbGoods.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbGrades.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbLoginLog.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbMenu.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbRole.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbRoleMenuButton.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSales.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTask.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTaskAssign.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTaskProcess.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbUser.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbUserOperateLog.cs">
+      <DependentUpon>TaskDb.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ashx\User.ashx" />
+    <Content Include="packages.config" />
+    <Content Include="ashx\Task.ashx" />
+    <Content Include="ashx\Version.ashx" />
+    <None Include="Properties\PublishProfiles\员工行为管理.pubxml" />
+    <EntityDeploy Include="TaskDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TaskDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="TaskDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TaskDb.edmx</DependentUpon>
+      <LastGenOutput>TaskDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TaskDb.edmx.diagram">
+      <DependentUpon>TaskDb.edmx</DependentUpon>
+    </Content>
+    <Content Include="TaskDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TaskDb.edmx</DependentUpon>
+      <LastGenOutput>TaskDb.cs</LastGenOutput>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19767</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:30307/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
